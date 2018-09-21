@@ -32,8 +32,10 @@
 				<?php 
 
 					if($userLoggedIn==$u){echo '<a href="upload.php">';}
+					if($userLoggedIn!=$u){echo '<a href="'.$u.'">';}
 					echo '<img src="'.$user_details[0]['profile_pic'].'" alt="" class="img-responsive profile_pic">';
 					if($userLoggedIn==$u){echo '</a>';}
+					if($userLoggedIn!=$u){echo '</a>';}
 
 					echo '<p class="text-center username">'.$user_details[0]['first_name'] . ' ' . $user_details[0]['last_name'].'</p>';
 				?>

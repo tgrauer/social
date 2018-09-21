@@ -61,19 +61,21 @@
 	<header>
 	    <nav class="navbar navbar-default navbar-fixed-top">
 	        <div class="container">
-
-	            <ul class="nav navbar-nav navbar-left">
-	                <li>
-	                	<?php 
-	                		if(isset($_SESSION['username'])){
-	                			echo '<a class="logo navbar-brand" href="home.php">SnapMyFaceYouTwit</a>';
-	                		}else{
-	                			echo '<a class="logo navbar-brand" href="index.php">SnapMyFaceYouTwit</a>';
-	                		}
-	                	?>
-	                    
-	                </li>
-	            </ul>
+	            <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar top-bar"></span>
+                    <span class="icon-bar middle-bar"></span>
+                    <span class="icon-bar bottom-bar"></span>
+                    </button>
+                    <?php 
+                    	if(isset($_SESSION['username'])){
+                    		echo '<a class="logo navbar-brand" href="home.php">SnapMyFaceYouTwit</a>';
+                    	}else{
+                    		echo '<a class="logo navbar-brand" href="index.php">SnapMyFaceYouTwit</a>';
+                    	}
+                    ?>
+                </div>
 
 	            <div id="navbar" class="navbar-collapse collapse">
 	            	
@@ -88,16 +90,16 @@
 	                    <li ><a class="avatar" href="#" ><img src="<?php echo $_SESSION['user']['profile_pic'];?>" alt="" role="button" tabindex="0" data-container="body" data-toggle="popover" data-placement="bottom" data-popover-content="#profile" data-trigger="click" > </a></li>
 	                </ul>
 
-	                	<div class="navbar-right">
-	                		<form action="search.php" method="GET" class="search-form" role="search" id="demo-2" name="search_form">
-	                			<div class="form-group pull-right" id="search">
-	                				<input type="search" class="form-control" placeholder="Search" onkeyup="getLiveSearchUsers(this.value, '<?php echo $userLoggedIn; ?>')" name="q" autocomplete="off" id="search_text_input">
-	                			</div>
-	                		</form>
-							
-	                		<div class="search_results" id="search_results"><div class="search_results_footer_empty"></div></div>
-	                			
-	                	</div>
+                	<div class="navbar-right">
+                		<form action="search.php" method="GET" class="search-form" role="search" id="demo-2" name="search_form">
+                			<div class="form-group pull-right" id="search">
+                				<input type="search" class="form-control" placeholder="Search" onkeyup="getLiveSearchUsers(this.value, '<?php echo $userLoggedIn; ?>')" name="q" autocomplete="off" id="search_text_input">
+                			</div>
+                		</form>
+						
+                		<div class="search_results" id="search_results"><div class="search_results_footer_empty"></div></div>
+                			
+                	</div>
 	            </div>
 	        </div>
 	    </nav>

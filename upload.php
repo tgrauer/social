@@ -147,16 +147,14 @@ if (isset($_POST['x'])){
 		$result_path ="img/profile_pics/".$finalname."n.jpeg";
 
 		//Insert image into database
-		// $insert_pic_query = mysqli_query($con, "UPDATE users SET profile_pic='$result_path' WHERE username='$userLoggedIn'");
 		$sql ="UPDATE users SET profile_pic=? WHERE username=?";
 		$stmt = $pdo->prepare($sql);
 		$stmt->execute([$result_path, $userLoggedIn]);
 
 		unset($_SESSION['user']['profile_pic']);
 		$_SESSION['user']['profile_pic']=$result_path;
-		// header("Location: ".$userLoggedIn);
 														
-}// post x
+}
 ?>
 <div id="Overlay" style=" width:100%; height:100%; border:0px #990000 solid; position:absolute; top:0px; left:0px; z-index:2000; display:none;"></div>
 

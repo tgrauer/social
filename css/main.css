@@ -40,6 +40,10 @@ applet, object, iframe, body, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abb
   margin-bottom: 20px;
 }
 
+.mb30 {
+  margin-bottom: 30px;
+}
+
 div.alert {
   margin-top: 30px;
 }
@@ -77,7 +81,17 @@ body {
   margin-top: 10px;
 }
 
+.navbar-right {
+  float: right;
+  margin-top: 5px;
+}
+
+.navbar-default .navbar-toggle {
+  margin-top: 15px;
+}
+
 nav.navbar {
+  margin-bottom: 0;
   min-height: 45px;
   max-height: 69px;
   margin-bottom: 0;
@@ -85,33 +99,9 @@ nav.navbar {
   background: #3498db;
   border-bottom: 4px solid #217dbb;
 }
-nav.navbar li a i {
-  outline: none !important;
-}
 nav.navbar .logo {
   font-size: 31px;
-  margin-top: 10px;
-}
-
-.navbar-collapse.collapse {
-  display: block !important;
-}
-
-.navbar-nav.navbar-right:last-child {
-  margin-right: -15px !important;
-}
-
-.navbar-right {
-  float: right !important;
-}
-
-#navbar ul.nav.navbar-nav {
-  float: right;
-}
-
-.navbar-header {
-  height: 45px;
-  background: #3498db;
+  margin-top: 4px;
 }
 
 #navbar ul.nav.navbar-nav {
@@ -127,42 +117,80 @@ nav.navbar .logo {
   color: #fff;
 }
 
-button.navbar-toggle {
-  margin-top: 21px;
-}
-
-.navbar-nav > li > a {
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
-.navbar-nav > li > a.mb {
-  padding-top: 11px;
-}
-
 .navbar-brand {
-  padding: 13px;
-}
-.navbar-brand img.hidden-xs {
-  max-width: 180px;
-}
-.navbar-brand img.mb_logo {
-  max-width: 43px;
+  background: url(../img/logo_glow.png) no-repeat 0 0;
+  min-height: 60px;
+  padding: 17.5px 15px;
 }
 
-button.navbar-toggle.collapsed {
-  background: #fff;
-}
-button.navbar-toggle.collapsed:hover {
-  background: #fff;
+.navbar-default {
+  background: url(../img/header_bg.jpg) repeat 0 0;
+  height: 76px;
 }
 
-.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
-  background: #fff;
+ul.nav.navbar-nav {
+  float: right;
 }
 
-.navbar-default .navbar-toggle .icon-bar {
-  background-color: #3498db;
+.nav > li > a {
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 700;
+  padding-left: 35px;
+  padding-right: 35px;
+  -webkit-transition: all, ease, 0.2s;
+  -moz-transition: all, ease, 0.2s;
+  -o-transition: all, ease, 0.2s;
+  transition: all, ease, 0.2s;
+}
+
+.nav > li
+.nav li:last-of-type a {
+  padding-right: 0;
+}
+
+.navbar-toggle {
+  border: none;
+  background: transparent !important;
+}
+
+.navbar-toggle:hover {
+  background: transparent !important;
+}
+
+.navbar-toggle .icon-bar {
+  width: 22px;
+  transition: all 0.2s;
+}
+
+.navbar-toggle .top-bar {
+  transform: rotate(45deg);
+  transform-origin: 10% 10%;
+}
+
+.navbar-toggle .middle-bar {
+  opacity: 0;
+}
+
+.navbar-toggle .bottom-bar {
+  transform: rotate(-45deg);
+  transform-origin: 10% 90%;
+}
+
+.navbar-toggle.collapsed .top-bar {
+  transform: rotate(0);
+}
+
+.navbar-toggle.collapsed .middle-bar {
+  opacity: 1;
+}
+
+.navbar-toggle.collapsed .bottom-bar {
+  transform: rotate(0);
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  background: none;
 }
 
 .navbar-default .navbar-toggle {
@@ -551,9 +579,14 @@ ul.nav li:last-of-type a .badge {
   border: 1px solid #ccc;
   resize: none;
 }
-.main_feed .post_form .btn {
+.main_feed .post_form .bootstrap-filestyle.input-group {
+  float: left;
+}
+.main_feed .post_form span.buttonText {
+  font-size: 12px;
+}
+.main_feed .post_form input.btn {
   float: right;
-  margin-top: 10px;
 }
 
 .like_form {
@@ -1041,4 +1074,143 @@ input::-webkit-input-placeholder {
   margin-bottom: 30px;
   padding-bottom: 5px;
   border-bottom: 1px solid #ddd;
+}
+
+video {
+  width: 100%    !important;
+  height: auto   !important;
+}
+
+@media handheld, only screen and (max-width: 991px) {
+  .status_post {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .profile_pic {
+    margin-right: 20px;
+  }
+
+  .status_post .post_body .newsFeedPostOptions a {
+    font-size: 13px;
+  }
+}
+@media handheld, only screen and (max-width: 767px) {
+  .nav a .badge {
+    left: 5px;
+    right: auto;
+  }
+
+  .navbar-right {
+    display: none;
+  }
+
+  #navbar ul.nav.navbar-nav {
+    float: none;
+  }
+
+  .container > .navbar-header, .container-fluid > .navbar-header, .container > .navbar-collapse, .container-fluid > .navbar-collapse {
+    border: none;
+  }
+
+  .navbar-default .navbar-collapse, .navbar-default .navbar-form {
+    background: #222;
+  }
+
+  .navbar li {
+    border-bottom: 1px solid #444;
+    border-top: 2px solid #000;
+    padding: 6px 0;
+  }
+
+  .navbar li:first-of-type {
+    border-top: none;
+  }
+
+  .navbar li:last-of-type {
+    border-bottom: none;
+  }
+
+  .navbar-nav {
+    margin: 0 -15px;
+  }
+
+  .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+    background: transparent;
+  }
+
+  .navbar-default .navbar-toggle .icon-bar {
+    background: #fff;
+  }
+
+  .navbar-default .navbar-toggle {
+    border-color: #fff;
+  }
+
+  nav.navbar .logo {
+    font-size: 25px;
+    margin-top: 3px;
+  }
+
+  .requests .profile_pic {
+    margin-right: 40px;
+  }
+
+  .status_post {
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0;
+  }
+
+  .status_post .profile_pic img {
+    float: left;
+    margin-right: 10px;
+    max-width: 50px;
+  }
+
+  .status_post .newsFeedPostOptions {
+    margin-left: 10%;
+    font-size: 13px;
+  }
+
+  .status_post .post_body {
+    padding: 0;
+    font-size: 14px;
+  }
+
+  .status_post .post_body span.post_time {
+    display: inline-block;
+    clear: both;
+  }
+}
+@media handheld, only screen and (max-width: 498px) {
+  .requests .profile_pic {
+    margin-right: 30px;
+    max-width: 50px;
+  }
+
+  .searchPageFriendButtons {
+    clear: both;
+  }
+  .searchPageFriendButtons form a, .searchPageFriendButtons form input {
+    float: right;
+    font-size: 11px;
+    font-weight: 600;
+  }
+  .searchPageFriendButtons form input {
+    margin-right: 0 !important;
+  }
+
+  .profile_pic {
+    padding: 0;
+  }
+
+  .navbar-default .navbar-toggle {
+    position: relative;
+    z-index: 999999;
+  }
+
+  .status_post .newsFeedPostOptions {
+    margin-left: 0;
+  }
 }

@@ -168,10 +168,10 @@
 			$stmt->execute([$user]);
 			return $stmt->fetchColumn();
 		}
-		public function getFriendRequests($user){
+		public function getFriendRequests($userLoggedIn){
 			$sql="SELECT * FROM friend_requests WHERE user_to = ? ORDER BY id desc";
 			$stmt=$this->db->prepare($sql);
-			$stmt->execute([$user]);
+			$stmt->execute([$userLoggedIn]);
 			$requests = $stmt->fetchAll();
 
 			foreach ($requests as $req => &$value) {

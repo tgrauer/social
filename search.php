@@ -23,6 +23,7 @@
 <div class="container main">
 	<div class="row">
 		<div class="col-sm-8 col-sm-offset-2 panel p20 requests">
+			<h3 class="sub_pg_title"><i class="fas fa-user-friends"></i> Search Results</h3>
 			<?php 
 				if($query == ''){
 					echo 'You must enter something in the search box.';
@@ -49,7 +50,7 @@
 						echo '<h4 class="mb20">We can\'t find anyone with a '. $type .' like '. $query.'</h4>';
 					}else{
 						
-						echo '<h4 class="mb20">'.count($returnedUsers) .' results found:</h4>';
+						echo '<h4 class="mb30">'.count($returnedUsers) .' results found:</h4>';
 
 						foreach ($returnedUsers as $u) {
 							$user_obj = new USER($userLoggedIn);

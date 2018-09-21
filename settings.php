@@ -9,7 +9,7 @@
 <div class="container main panel settings p20">
 	<div class="row ">
 		<div class="col-sm-12 p20">
-			<h3>Account Settings</h3>
+			<h3 class="sub_pg_title"><i class="fas fa-cog"></i> Account Settings</h3>
 		</div>
 	</div>
 	
@@ -19,7 +19,7 @@
 				echo '<img src="'.$user['profile_pic'].'" class="profile_pic_lg img-responsive" />';
 			?>
 
-			<a href="upload.php">Upload new profile picture</a>
+			<a href="upload.php"><i class="fas fa-upload"></i> Upload new profile picture</a>
 		</div>
 
 		<div class="col-sm-6">

@@ -60,7 +60,6 @@
 			$sql="INSERT into likes VALUES(?,?,?)";
 			$stmt = $pdo->prepare($sql);
 			$stmt->execute(['', $userLoggedIn, $post_id]);
-			// $returned_id=$pdo->lastInsertId();
 
 			if($user_liked != 'none'){
 				$notification = new NOTIFICATION($userLoggedIn);

@@ -53,7 +53,6 @@
 			$sql = "INSERT INTO comments VALUES(?,?,?,?,?,?,?)";
 			$stmt = $pdo->prepare($sql);
 			$stmt->execute(['', $post_body, $userLoggedIn, $posted_toby[0]['added_by'], $date_time_now, 'no', $post_id]);
-			// $returned_id=$pdo->lastInsertId();
 
 			if($posted_to !=$userLoggedIn){
 				$notification = new NOTIFICATION($userLoggedIn);
@@ -129,12 +128,8 @@
 		if(!count($get_comments)){
 			echo '<p class="text-center">No Comments to show!</p>';
 		}
-	
 		
 	?>
 	
-
-
-
 </body>
 </html>

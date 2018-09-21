@@ -101,7 +101,6 @@ function getLiveSearchUsers(value, user){
 			$(".search_results_footer").html('');
 			$(".search_results_footer").toggleClass('search_results_footer_empty');
 			$(".search_results_footer").toggleClass('search_results_footer');
-
 		}
 	});
 }

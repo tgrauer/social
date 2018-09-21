@@ -73,13 +73,13 @@
 		<div class="row">
 			<div class="col-sm-3 user_details">
 				<div class="row">
-					<div class="col-sm-5">
+					<div class="col-sm-5 col-xs-4">
 						<?php 
 							echo '<a href="'.$user['username'].'"><img src="'.$user_details[0]['profile_pic'].'" alt="" class="img-responsive profile_pic"></a>';
 						?>
 						
 					</div>
-					<div class="col-sm-7">
+					<div class="col-sm-7 col-xs-8">
 						<?php 
 							echo '<a href="'.$user['username'].'">'.$user['first_name'] . ' ' . $user['last_name'].'</a><br />';
 							echo '<p>Friends: '.$num_friends.'</p>';
@@ -94,11 +94,12 @@
 				<form action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST" class="form post_form" enctype="multipart/form-data">
 					<textarea name="post_text" id="post_text" cols="30" rows="7" class="form-control" placeholder="Whats on your mind?"></textarea><br />
 					
-					<div class="form-group col-sm-6">
+					<div class="form-group col-sm-12">
 						<input type="file" name="fileToUpload" id="fileToUpload" multiple="multiple">
+						<input type="submit" class="btn btn-primary btn-md fltrgt" name="post" value="Post">
 					</div>
 
-					<input type="submit" class="btn btn-primary btn-md fltrgt" name="post" value="Post">
+					
 				</form>
 
 				<?php 
@@ -130,8 +131,6 @@
 
 					$(window).scroll(function(){
 
-						// var height = document.body.scrollHeight;
-						// var scroll_top = $(this).scrollTop();
 						var page = $('.posts_area').find('.nextPage').val();
 						var noMorePosts = $('.posts_area').find('.noMorePosts').val();
 						
@@ -153,10 +152,6 @@
 							});
 						}// end if
 
-						// if($('.nomorepost_warning').length>1){
-						// 	$('.nomorepost_warning').first().remove();
-						// }
-
 						return false;
 					});
 				});
@@ -164,8 +159,6 @@
 			</script>
 		</div>
 	</div>
-
-
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" type="text/javascript"></script>
 <script type="text/javascript" src="js/bootstrap-filestyle.js"></script>

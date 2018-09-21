@@ -28,45 +28,43 @@
 
 			$check_empty = preg_replace('/\s+/', '', $body);
 
-			// if($check_empty !=""){
 
-				$body_array = preg_split("/\s+/", $body);
+			$body_array = preg_split("/\s+/", $body);
 
-				foreach ($body_array as $key => $value) {
-					if(strpos($value, 'www.youtube.com/watch?v=') !== false){
-						$link = preg_split("!&!", $value);
-						$value=preg_replace("!watch\?v=!", "embed/", $link[0]);
-						$value="<br /><iframe width='420' height='315' src='".$value."'></iframe><br />";
-						$body_array[$key]=$value;
-					}
+			foreach ($body_array as $key => $value) {
+				if(strpos($value, 'www.youtube.com/watch?v=') !== false){
+					$link = preg_split("!&!", $value);
+					$value=preg_replace("!watch\?v=!", "embed/", $link[0]);
+					$value="<br /><iframe class='video' width='420' height='315' src='".$value."'></iframe><br />";
+					$body_array[$key]=$value;
 				}
+			}
 
-				$body = implode(" ", $body_array);
+			$body = implode(" ", $body_array);
 
-				$date_added = date('Y-m-d H:i:s');
-				$added_by = $userLoggedIn;
+			$date_added = date('Y-m-d H:i:s');
+			$added_by = $userLoggedIn;
 
-				if($user_to == $added_by){
-					$user_to='none';
-				}
+			if($user_to == $added_by){
+				$user_to='none';
+			}
 
-				$sql = "INSERT INTO posts (body, added_by, user_to, date_added, user_closed, deleted, likes, image) VALUES(?,?,?,?,?,?,?,?)";
-				$stmt= $this->db->prepare($sql);
-				$stmt->execute([$body,$added_by,$user_to,$date_added,0,0,0,$imgName]);
-				$returned_id=$this->db->lastInsertId();
+			$sql = "INSERT INTO posts (body, added_by, user_to, date_added, user_closed, deleted, likes, image) VALUES(?,?,?,?,?,?,?,?)";
+			$stmt= $this->db->prepare($sql);
+			$stmt->execute([$body,$added_by,$user_to,$date_added,0,0,0,$imgName]);
+			$returned_id=$this->db->lastInsertId();
 
-				if($user_to !='none'){
-					$notification = new NOTIFICATION($added_by);
-					$notification->insertNotification($returned_id, $user_to, 'profile_post');
-				}
+			if($user_to !='none'){
+				$notification = new NOTIFICATION($added_by);
+				$notification->insertNotification($returned_id, $user_to, 'profile_post');
+			}
 
-				$num_posts = $this->user_obj->getNumPosts();
-				$num_posts ++;
-				$sql = "UPDATE users SET num_posts= ? WHERE username=?";
-				$stmt=$this->db->prepare($sql);
-				$stmt->execute([$num_posts, $added_by]);
+			$num_posts = $this->user_obj->getNumPosts();
+			$num_posts ++;
+			$sql = "UPDATE users SET num_posts= ? WHERE username=?";
+			$stmt=$this->db->prepare($sql);
+			$stmt->execute([$num_posts, $added_by]);
 
-			// }
 		}
 
 		public function load_posts_friends($data, $limit){
@@ -333,8 +331,6 @@
 					$str.= "<input type='hidden' class='noMorePosts' value='true' /><p class='nomorepost_warning text-center'>No More Posts</p>";
 				}
 			}else{
-				// $userprof_obj = new USER($profile_user);
-				// $user_fullname = $this->userprof_obj->getuserFullName();
 				$str = '<h4 class="text-center"><b>'. $profile_user .' has not posted anything yet</b></h4>';
 			}
 

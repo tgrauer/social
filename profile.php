@@ -166,8 +166,6 @@
 
 					$(window).scroll(function(){
 
-						// var height = $('.posts_area').height();
-						// var scroll_top = $(this).scrollTop();
 						var page = $('.posts_area').find('.nextPage').val();
 						var noMorePosts = $('.posts_area').find('.noMorePosts').val();
 
@@ -188,10 +186,6 @@
 								}
 							});
 						}// end if
-
-						// if($('.nomorepost_warning').length>1){
-						// 	$('.nomorepost_warning').first().remove();
-						// }
 
 						return false;
 					});
@@ -230,10 +224,7 @@
 	
  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" type="text/javascript"></script>
  <script src="js/bootbox.min.js"></script>
-
  <script src="js/site.js"></script>
-
-
 
  </body>
  </html>
