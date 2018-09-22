@@ -22,7 +22,7 @@
 			<a href="upload.php"><i class="fas fa-upload"></i> Upload new profile picture</a>
 		</div>
 
-		<div class="col-sm-6">
+		<div class="col-sm-6 close_account">
 			<h4>Close Account</h4>
 			<a href="close_account.php" class="btn btn-danger mb20">Close Account</a>	
 			<br />

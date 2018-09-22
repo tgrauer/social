@@ -40,7 +40,7 @@
 <div class="home_bg">
     <div class="container">
         <div class="row">
-            <div class="col-sm-6 col-sm-offset-3 mt100">
+            <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12 mt100">
                 <?php 
                     if(isset($_POST['register']) && !isset($_SESSION['reg_success'])){
                         echo '<script>

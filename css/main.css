@@ -542,9 +542,6 @@ ul.nav li:last-of-type a .badge {
   padding-bottom: 20px;
   border-bottom: 1px solid #ddd;
 }
-.requests .request p {
-  margin-top: 20px;
-}
 .requests .profile_pic {
   float: left;
   max-width: 70px;
@@ -567,6 +564,7 @@ ul.nav li:last-of-type a .badge {
   -webkit-border-radius: 5px;
   border-radius: 5px;
   padding: 15px;
+  overflow: auto;
 }
 .main_feed .post_form {
   border-bottom: 1px solid #ddd;
@@ -1081,6 +1079,11 @@ video {
   height: auto   !important;
 }
 
+.profile_pic.col-sm-2 a img {
+  position: relative;
+  z-index: 99999;
+}
+
 @media handheld, only screen and (max-width: 991px) {
   .status_post {
     margin-left: 0;
@@ -1094,8 +1097,49 @@ video {
   .status_post .post_body .newsFeedPostOptions a {
     font-size: 13px;
   }
+
+  .navbar .container {
+    width: 95%;
+  }
+
+  .settings form {
+    margin-bottom: 30px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 20px;
+  }
+
+  .settings form:last-of-type {
+    border: none;
+  }
 }
 @media handheld, only screen and (max-width: 767px) {
+  .settings .row.bb {
+    margin: 0;
+    margin-bottom: 20px;
+  }
+
+  .settings .col-sm-6.close_account {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .close_account {
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .container > .navbar-header, .container-fluid > .navbar-header, .container > .navbar-collapse, .container-fluid > .navbar-collapse {
+    position: relative;
+    z-index: 999;
+  }
+
+  button.navbar-toggle.collapsed {
+    position: relative;
+    z-index: 9999999;
+  }
+
   .nav a .badge {
     left: 5px;
     right: auto;
@@ -1184,9 +1228,18 @@ video {
   }
 }
 @media handheld, only screen and (max-width: 498px) {
+  .profile_info .profile_user_details {
+    padding-left: 20px;
+  }
+
   .requests .profile_pic {
     margin-right: 30px;
     max-width: 50px;
+    margin-left: 8px;
+  }
+
+  .form_holder .logo {
+    font-size: 30px;
   }
 
   .searchPageFriendButtons {
@@ -1203,11 +1256,6 @@ video {
 
   .profile_pic {
     padding: 0;
-  }
-
-  .navbar-default .navbar-toggle {
-    position: relative;
-    z-index: 999999;
   }
 
   .status_post .newsFeedPostOptions {

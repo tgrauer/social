@@ -38,13 +38,13 @@
 		
 		<div class="col-sm-3 user_details">
 			<div class="row">
-				<div class="col-sm-5">
+				<div class="col-xs-5">
 					<?php 
 						echo '<a href="'.$user['username'].'"><img src="'.$user_details[0]['profile_pic'].'" alt="" class="img-responsive profile_pic"></a>';
 					?>
 					
 				</div>
-				<div class="col-sm-7">
+				<div class="col-xs-7">
 					<?php 
 						echo '<a href="'.$user['username'].'">'.$user['first_name'] . ' ' . $user['last_name'].'</a><br />';
 						echo '<p>Friends: '.$num_friends.'</p>';

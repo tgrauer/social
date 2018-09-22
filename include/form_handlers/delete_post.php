@@ -23,7 +23,6 @@
 			$sql ="UPDATE users SET num_posts =? WHERE username=?";
 			$stmt = $pdo->prepare($sql);
 			$stmt->execute([$cnt, $userLoggedIn]);
-
 		}
 	}
 ?>
