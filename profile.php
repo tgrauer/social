@@ -177,8 +177,8 @@
 								type:'POST',
 								data:'page='+page+'&userLoggedIn='+userLoggedIn+'&profile_username='+profile_username,
 								cache:false,
+								async: false,
 								success:function(response){
-									console.log('ran');
 									$('.nextPage').remove();
 									$('.noMorePosts').remove();
 									$('#loading').hide();

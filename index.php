@@ -1,6 +1,6 @@
 
 <?php 
-    
+    // phpinfo();
     require_once 'include/db.php';
     require_once 'include/form_handlers/login_handler.php';
     require_once 'include/form_handlers/register_handler.php';

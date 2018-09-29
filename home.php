@@ -142,6 +142,7 @@
 								type:'POST',
 								data:'page='+page+'&userLoggedIn='+userLoggedIn,
 								cache:false,
+								async: false,
 								success:function(response){
 									console.log('ran');
 									$('.nextPage').remove();
